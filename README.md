@@ -6,36 +6,30 @@ This project analyzes a randomized promotion experiment for a single product. Th
 
 The analysis asks whether the promotion increases purchase rate, whether broad promotion covers its cost, and whether a customer-targeting strategy can improve the economics.
 
-## Questions
+## Business questions
 
 1. Does the promotion increase purchase rate?
-2. Does broad promotion generate positive net incremental revenue?
+2. Does broad promotion generate positive net incremental revenue (NIR)?
 3. Can customer features help identify customers who may respond profitably to the promotion?
-4. Does the targeting strategy show positive incremental value when evaluated on separate randomized test data?
+4. Does the targeting rule show positive incremental value when evaluated on separate randomized test data?
 
 ## Methods and tools
 
 - Python: pandas, NumPy, Matplotlib, SciPy, statsmodels, scikit-learn
 - A/B testing and experiment analysis
-- Purchase-rate comparison and two-proportion significance test
+- Conversion rate comparison and two-proportion significance test
 - Chi-square goodness-of-fit test for sample-ratio mismatch (SRM)
 - Logistic regression
 
 ## Key findings
 
-- The promotion increased purchase rate in the overall training experiment, but its estimated average lift did not cover the promotion cost under the stated assumptions.
-- The targeting rule selected 12,232 customers for evaluation.
-- Among selected customers, purchase rate was 2.60% in treatment and 0.65% in control, a lift of 1.96 percentage points (approximate 95% CI: 1.51 to 2.40 percentage points).
-- Estimated net incremental revenue was $0.05 per selected customer (approximate 95% CI: $0.001 to $0.090), or about $557 across the selected group.
-- The selected-group result met the project’s decision criteria for positive net incremental revenue.
+- The promotion increased purchase rate in the overall experiment, but its average lift was below the 1.5 percentage-point break-even lift under the stated assumptions.
+- The targeting rule selected 12,744 customers for evaluation.
+- Among selected customers, purchase rate was 2.72% in treatment and 0.70% in control, a lift of 2.01 percentage points (approximate 95% CI: 1.56 to 2.46 percentage points).
+- Estimated NIR was $0.05 per selected customer (approximate 95% CI: $0.006 to $0.096). The result meets the project’s agreed criteria for positive NIR.
 
-## Business assumptions and limitations
+## Limitations
 
-The analysis treats $10 as product revenue per purchase and subtracts the $0.15 promotion cost. It does not include product, fulfillment, or other business costs, so net incremental revenue here is not the same as profit.
+The customer features are anonymized as `V1` through `V7`. The NIR calculation uses product revenue and promotion cost only; it excludes product and other business costs, so it is not profit. Customer features are anonymized, so their business meaning is unknown. 
 
-The customer features are anonymized as `V1` through `V7`. The model-based customer-level uplift estimates are uncertain; the targeting strategy is evaluated using randomized outcomes in the separate test data.
-
-## Files
-
-- `Starbucks AB Testing and Experimentation.ipynb` — analysis and results
 
