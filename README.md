@@ -8,10 +8,10 @@ The analysis asks whether the promotion increases purchase rate, whether broad p
 
 ## Business questions
 
-1. Does the promotion increase purchase rate?
+1. Does the promotion increase conversion rate?
 2. Does broad promotion generate positive net incremental revenue (NIR)?
-3. Can customer features help identify customers who may respond profitably to the promotion?
-4. Does the targeting rule show positive incremental value when evaluated on separate randomized test data?
+3. Can logistic regression identify customers whose estimated conversion-rate lift may cover the promotion cost?
+4. Does the targeting strategy generate positive NIR when evaluated on separate randomized test data?
 
 ## Methods and tools
 
@@ -19,7 +19,7 @@ The analysis asks whether the promotion increases purchase rate, whether broad p
 - A/B testing and experiment analysis
 - Conversion rate comparison and two-proportion significance test
 - Chi-square goodness-of-fit test for sample-ratio mismatch (SRM)
-- Logistic regression
+- Logistic regression for model-based treatment-effect estimation (uplift modeling)
 
 ## Key findings
 
